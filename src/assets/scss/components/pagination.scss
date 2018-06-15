@@ -1,0 +1,12 @@
+.numbers {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+
+  .number {
+    position: absolute;
+    left: 0;
+  }
+}

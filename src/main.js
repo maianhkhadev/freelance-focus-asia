@@ -6,6 +6,13 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+/**
+* jQuery and Bootstrap includes
+*/
+window.$ = window.jQuery = require('jquery')
+window.Popper = require('popper.js')
+require('bootstrap')
+
 /* eslint-disable no-new */
 new Vue({
   el: '#root',

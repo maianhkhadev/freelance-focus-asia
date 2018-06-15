@@ -1,12 +1,21 @@
 <template>
-  <section>
+  <section ref="section">
 
   </section>
 </template>
 
 <script>
-  export default {
+  import { EventBus } from '@/plugins/event-bus.js'
 
+  export default {
+    mounted () {
+      let self = this
+
+      self.$refs.section.onEnter = function () {
+        EventBus.$emit('next-section', 'section-01')
+      }
+      self.$refs.section.onLeave = function () { console.log('section-01 leave') }
+    }
   }
 </script>
 

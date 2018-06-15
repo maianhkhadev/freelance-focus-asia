@@ -3,6 +3,7 @@
     <header></header>
 
     <main class="main">
+      <slot></slot>
     </main>
 
     <footer></footer>

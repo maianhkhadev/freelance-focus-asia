@@ -1,0 +1,24 @@
+svg {
+  width: 100%;
+  height: auto;
+
+  image:nth-child(1) {
+    margin-left: 70px;
+    margin-top: 70px;
+    width: 370px;
+    height: 349px;
+  }
+}
+
+.grid-sizer,
+.grid-item {
+  background-color: brown;
+  width: calc(20% - 0.5rem);
+  height: 100px;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+.grid-item--width2 {
+  width: calc(40% - 0.5rem);
+}

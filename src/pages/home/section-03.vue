@@ -12,11 +12,11 @@
       let self = this
 
       self.$refs.section.onEnter = function () {
-        EventBus.$emit('next-section', 'section-02')
+        EventBus.$emit('next-section', 'section-03')
       }
-      self.$refs.section.onLeave = function () { console.log('section-02 leave') }
+      self.$refs.section.onLeave = function () { console.log('section-03 leave') }
     }
   }
 </script>
 
-<style lang="scss" src="@/assets/scss/pages/home/section-02.scss" scoped></style>
+<style lang="scss" src="@/assets/scss/pages/home/section-03.scss" scoped></style>
