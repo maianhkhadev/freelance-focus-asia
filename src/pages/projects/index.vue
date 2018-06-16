@@ -7,6 +7,7 @@
             <div class="col-xl-6">
               <div class="name">{{ project.name }}</div>
               <div class="content">{{ project.content }}</div>
+              {{ $t("message.hello") }}
               <router-link class="btn btn-blue" :to="{ name: 'Project', params: { id: 123 }}">Explore</router-link>
             </div>
           </div>

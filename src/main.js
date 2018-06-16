@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Root from './Root'
+import i18n from './i18n'
 import router from './router'
 
 Vue.config.productionTip = false
@@ -16,6 +17,7 @@ require('bootstrap')
 /* eslint-disable no-new */
 new Vue({
   el: '#root',
+  i18n,
   router,
   components: { Root },
   template: '<Root/>'
