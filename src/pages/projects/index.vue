@@ -8,7 +8,6 @@
               <div class="name">{{ project.name }}</div>
               <div class="content">{{ project.content }}</div>
               {{ $t("message.hello") }}
-              <router-link class="btn btn-blue" :to="{ name: 'Project', params: { id: 123 }}">Explore</router-link>
             </div>
           </div>
         </div>
@@ -34,7 +33,7 @@
             }
           }, {
             id: 2,
-            name: 'Project 1',
+            name: 'Project 2',
             content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
             thumbnail: {
               src: 'https://i.pinimg.com/originals/24/4d/fd/244dfd15815e145634514529e4573c1e.jpg',
@@ -42,7 +41,7 @@
             }
           }, {
             id: 3,
-            name: 'Project 1',
+            name: 'Project 3',
             content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
             thumbnail: {
               src: 'https://i.pinimg.com/originals/24/4d/fd/244dfd15815e145634514529e4573c1e.jpg',
