@@ -1,66 +1,115 @@
 <template>
-  <div class="projects">
-    <template v-for="project in projects">
-      <section class="project" v-bind:key="project.id" v-bind:style="{ 'background-image': `url(${project.thumbnail.src})` }">
+  <layout>
+    <div class="projects">
+
+      <section class="project project-01 project-text-white" data-dock-class="dock-white">
         <div class="container">
           <div class="row">
             <div class="col-xl-6">
-              <div class="name">{{ project.name }}</div>
-              <div class="content">{{ project.content }}</div>
-              {{ $t("message.hello") }}
+              <h1>popeyes</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+              <button class="btn btn-main">
+                <span>Explore</span>
+              </button>
             </div>
           </div>
         </div>
       </section>
-    </template>
-  </div>
+
+      <section class="project project-02 project-text-black" data-dock-class="dock-black">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6">
+              <h1>iqlac</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <button class="btn btn-main">
+                <span>Explore</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project project-03 project-text-black" data-dock-class="dock-black">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6">
+              <h1>organist</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>
+              <button class="btn btn-main">
+                <span>Explore</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project project-04 project-text-white" data-dock-class="dock-white">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6">
+              <h1>the glenlivet</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <button class="btn btn-main">
+                <span>Explore</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="project project-05 project-text-black" data-dock-class="dock-black">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6">
+              <h1>huggies</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <button class="btn btn-main">
+                <span>Explore</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <dock-section-name ref="dock" class="dock-section-name" :size="5"></dock-section-name>
+  </layout>
 </template>
 
 <script>
-  import Scroll from '@/plugins/scroll'
+  import Layout from '@/layouts/full-screen/index'
+  import DockSectionName from '@/components/dock-section-name'
 
   export default {
     data () {
       return {
-        projects: [
-          {
-            id: 1,
-            name: 'Project 1',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            thumbnail: {
-              src: 'https://i.pinimg.com/originals/24/4d/fd/244dfd15815e145634514529e4573c1e.jpg',
-              alt: ''
-            }
-          }, {
-            id: 2,
-            name: 'Project 2',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            thumbnail: {
-              src: 'https://i.pinimg.com/originals/24/4d/fd/244dfd15815e145634514529e4573c1e.jpg',
-              alt: ''
-            }
-          }, {
-            id: 3,
-            name: 'Project 3',
-            content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-            thumbnail: {
-              src: 'https://i.pinimg.com/originals/24/4d/fd/244dfd15815e145634514529e4573c1e.jpg',
-              alt: ''
-            }
-          }
-        ]
+
       }
     },
     components: {
-
+      'layout': Layout,
+      'dock-section-name': DockSectionName
     },
     mounted () {
       let self = this
 
-      let section = document.querySelector('section')
-      section.classList.add('be-seen-first')
+      let sections = document.querySelectorAll('section')
+      sections.forEach(function(section) {
 
-      Scroll.init()
+        section.onEnter = function (direction) {
+
+          if(direction === 'UP') {
+            self.$refs.dock.prevSection(section)
+          }
+
+          if(direction === 'DOWN') {
+            self.$refs.dock.nextSection(section)
+          }
+        }
+
+        section.onLeave = function () { console.log('section leave') }
+      })
     }
   }
 </script>

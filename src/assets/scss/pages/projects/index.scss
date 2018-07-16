@@ -4,10 +4,14 @@
   overflow: hidden;
 
   .project {
+    display: flex;
+    align-items: flex-end;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    padding-top: 9.25rem;
+    padding-bottom: 9.25rem;
 
     @media screen and (min-width: 1200px) {
       position: absolute;
@@ -17,9 +21,128 @@
       right: 0;
     }
 
-    .name {
-      color: #ffffff;
-      font-size: 2rem;
+    h1 {
+      position: relative;
+      font-size: 8rem;
+      font-family: 'Helvetica Neue';
+      line-height: 1.2;
+      text-shadow: 0 0.25rem 0.5rem #d2af07;
+      margin-left: -0.5rem;
+      margin-bottom: 1.25rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        background-color: #fdd20a;
+        top: 62.5%;
+        width: 1.75rem;
+        height: 8.25rem;
+        transform: translate(-50%, -50%) skew(15deg);
+        z-index: -1;
+      }
     }
+
+    p {
+      font-size: 1.125rem;
+      font-family: 'SVN-Gotham';
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1.875rem;
+    }
+  }
+
+  .project:nth-of-type(odd) {
+    text-align: left;
+
+    .col-xl-6 {
+      margin-right: auto;
+    }
+
+    h1 {
+
+      &::before {
+        left: 40%;
+        right: unset;
+      }
+    }
+
+    p {
+      padding-right: 8rem;
+    }
+
+    button {
+      margin-left: 0.75rem;
+    }
+  }
+
+  .project:nth-of-type(even) {
+    text-align: right;
+
+    .col-xl-6 {
+      margin-left: auto;
+    }
+
+    h1 {
+
+      &::before {
+        left: unset;
+        right: 20%;
+      }
+    }
+
+    p {
+      padding-left: 8rem;
+    }
+
+    button {
+      margin-right: 0.75rem;
+    }
+  }
+
+  .project-text-white {
+
+    h1 {
+      color: #ffffff;
+    }
+
+    p {
+      color: #ffffff;
+    }
+  }
+
+  .project-text-black {
+
+    h1 {
+      color: #5c5e5c;
+    }
+
+    p {
+      color: #5c5e5c;
+    }
+  }
+
+  .project-01 {
+    background-image: url('~@/assets/images/pages/projects/im-01.jpg');
+  }
+
+  .project-02 {
+    background-image: url('~@/assets/images/pages/projects/im-02.jpg');
+  }
+
+  .project-03 {
+    background-image: url('~@/assets/images/pages/projects/im-03.jpg');
+  }
+
+  .project-04 {
+    background-image: url('~@/assets/images/pages/projects/im-04.jpg');
+
+    h1 {
+      line-height: 0.85;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .project-05 {
+    background-image: url('~@/assets/images/pages/projects/im-05.jpg');
   }
 }

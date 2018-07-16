@@ -4,6 +4,10 @@
   overflow: hidden;
 
   .section {
+    background-image: url('~@/assets/images/pages/home/bim.jpg');
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: contain;
 
     @media screen and (min-width: 1200px) {
       position: absolute;
@@ -13,10 +17,4 @@
       right: 0;
     }
   }
-}
-
-.pagination {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
 }

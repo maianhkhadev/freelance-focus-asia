@@ -1,0 +1,46 @@
+.dock {
+  position: absolute;
+  left: 2rem;
+  bottom: 2rem;
+  z-index: 1000;
+
+  &.dock-white {
+
+    .letter {
+      color: #ffffff;
+    }
+  }
+
+  &.dock-black {
+
+    .letter {
+      color: #5c5e5c;
+    }
+  }
+
+  .letter {
+    font-size: 1.25rem;
+    font-family: 'SVN-Gotham';
+    font-weight: 700;
+    line-height: 1.2;
+    transition: color 0.25s ease-in;
+    overflow: hidden;
+
+    &:nth-child(3) {
+      color: #fdd20a;
+    }
+  }
+
+  .numbers {
+    position: relative;
+    display: inline-block;
+    width: 1rem;
+    height: 1.5rem;
+
+    .number {
+      position: absolute;
+      left: 0;
+      line-height: 1.5;
+    }
+  }
+}

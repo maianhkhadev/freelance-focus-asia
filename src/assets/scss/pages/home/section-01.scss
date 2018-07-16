@@ -1,3 +1,50 @@
 section {
-  background-color: blue;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+
+  &::before {
+    content: '01.';
+    position: absolute;
+    bottom: 0;
+    right: calc(50vw - 570px);
+    color: rgba(#d5d5d5, 0.4);
+    font-size: 10rem;
+    font-family: 'SVN-Gotham';
+    font-weight: 700;
+  }
+
+  h1 {
+    color: #5c5e5c;
+    font-size: 4.5rem;
+    font-family: 'Helvetica Neue';
+    font-weight: 700;
+    text-shadow: -0.25rem 0.25rem 0.5rem #d2af07;
+    line-height: 1.5;
+
+    span {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: #fdd20a;
+        top: 50%;
+        left: 50%;
+        width: 1.75rem;
+        height: 5.5rem;
+        transform: translate(-50%, -50%) skew(20deg);
+        z-index: -1;
+      }
+    }
+  }
+
+  p {
+    color: #5c5e5c;
+    font-size: 1.125rem;
+    font-family: 'SVN-Gotham';
+    font-weight: 300;
+  }
 }

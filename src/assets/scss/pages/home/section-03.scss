@@ -1,3 +1,49 @@
 section {
-  background-color: black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+
+  &::before {
+    content: '03.';
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f5cb0b;
+    font-size: 10rem;
+    font-family: 'SVN-Gotham';
+    font-weight: 700;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    h2 {
+      color: #5c5e5c;
+      font-size: 3rem;
+      font-family: 'Helvetica Neue';
+      text-transform: capitalize;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: #5c5e5c;
+      font-size: 1.125rem;
+      font-family: 'SVN-Gotham';
+      font-weight: 300;
+    }
+  }
+
+  .deco-01 {
+    position: absolute;
+    background-color: #fdd20a;
+    top: 0;
+    left: calc(100vh * 0.36);
+    width: 100vw;
+    height: 100vh;
+    transform: skew(20deg);
+  }
 }
